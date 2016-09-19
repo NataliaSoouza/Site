@@ -1,0 +1,44 @@
+<html ng-app="app">
+<head>
+
+<link rel="stylesheet" href="css/stylelogin.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/angular.js"></script>
+<script src="js/app.js"></script>
+<script src="services/loginServices.js"></script>
+<script src="controllers/loginController.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/custom.js"></script>
+<link rel="icon" href="images/wheelchair.png" type="image/x-icon" />
+
+<title>Login AllDispor</title>
+
+</head>
+<body>
+<div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+    <form class="login-form" name="loginForm" ng-controller="loginController">
+      <input type="text" placeholder="usuario" name="login" ng-model="acesso.login" ng-required="true"/>
+      <div ng-show="loginForm.login.$invalid && loginForm.login.$dirty" class="alert alert-danger">
+        Por favor preencher login!
+      </div>
+      <input type="password" placeholder="senha" name="senha" ng-model="acesso.senha" ng-required="true"/>
+      <div ng-show="loginForm.senha.$invalid && loginForm.senha.$dirty" class="alert alert-danger">
+        Por favor preencher senha!
+      </div>
+      <button type="button" ng-click="login(acesso)" ng-disabled="loginForm.$invalid">login</button>
+
+      <p class="message">Deseja ter seu estabelecimento no aplicativo ou site?<br><b><a href="form.html">REGISTRE AGORA!</a></p></b>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

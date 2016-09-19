@@ -1,0 +1,77 @@
+
+<html  ng-app="app">
+<meta charset="utf-8">
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/form.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="js/mascara.js"></script>
+	<script src="js/selecao.js"></script>
+	<script src="js/validate.js"></script>
+	<!-- angular -->
+	<script src="js/angular.js"></script>
+
+	<script src="js/app.js"></script>
+	<script src="services/cadastroUserApi.js"></script>
+	<script src="controllers/cadastroUserController.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/servicos.js"></script>
+  <link rel="icon" href="images/wheelchair.png" type="image/x-icon" />
+
+</head>
+
+	<title>Registro AllDispor</title>
+
+<body>
+<form class="form-horizontal" name="register-form" ng-controller="cadastroUserController">
+<fieldset>
+<div id="content"><br>
+
+<div class="login-page">
+  <div class="form">
+    <form class="register-form">
+
+<br><br>
+<center><h2>Dados de Acesso</h2></center><br>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Nome de Usuário: * </label>
+	<div class="col-md-4">
+		<input type="text" class="form-control" id="login" ng-model="cadastro.login" required>
+	</div>
+</div>
+
+<!-- Email -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="site">E-mail: * </label>
+	<div class="col-md-4">
+		<input type="email" class="form-control" id="exampleInputEmail1" ng-model="cadastro.email" required>
+	</div>
+</div>
+
+
+
+  <div class="form-group">
+		<label class="col-md-4 control-label">Senha: *</label>
+		<div class="col-md-2">
+	    <input type="password" class="form-control senha" id="senha" name = "senha" ng-model="cadastro.senha" required>
+	  </div>
+
+	<div class="col-md-2">
+		<input type="password" class="form-control senha" id="confirmar_senha" name = "confirmar_senha" placeholder="Repita Senha *" oninput="check(this)" ng-model="cadastro.confirmarsenha" required >
+	</div>
+
+  </div><br>
+  <center><button type="submit" class="btn btn-info" id="enviar" ng-click="efetuarCadastro(cadastro)">Salvar Dados</button>      <a href="index.html"><button type="cancel" class="btn btn-danger">Cancelar</a></button>
+</center></div>
+<p>{{cadastro.error }}</p>
+<script src="js/selecao.js"></script>
+<script src="js/mascara.js"></script>
+
+</fieldset>
+</form>
+</body>
+
+
+</html>
